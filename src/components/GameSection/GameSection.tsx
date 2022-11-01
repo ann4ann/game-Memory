@@ -6,26 +6,48 @@ import { shuffle } from "../../utils/functions";
 const GameSection: React.FC = () => {
   const [gameCards, setGameCards] = useState<card[]>([]);
   const [pickedCards, setPickedCards] = useState<number[]>([]);
+  const [onDelay, setOnDelay] = useState<boolean>(false);
+
   useEffect(() => {
-    const cardsPairs = [...cards, ...cards];
-    const chuffleCardsPairs = shuffle(shuffle(cardsPairs));
-    setGameCards(chuffleCardsPairs);
+    const cardsFirstSet = JSON.parse(JSON.stringify(cards));
+    const cardsSecondSet = JSON.parse(JSON.stringify(cards));
+    const cardsPairs = [...cardsFirstSet, ...cardsSecondSet];
+    const chuffledCardsPairs = shuffle(shuffle(cardsPairs));
+    setGameCards(chuffledCardsPairs);
   }, []);
+
   useEffect(() => {
-    if (pickedCards.length > 1 && pickedCards[0] === pickedCards[1]) {
-      const newCardsArr = gameCards.filter(
-        (card) => card.pairId != pickedCards[0]
-      );
-      setGameCards(newCardsArr);
+    if (pickedCards.length > 1) {
+      if (pickedCards[0] === pickedCards[1]) {
+      } else {
+        const newCardsArr = gameCards.map((card) => {
+          return card.pairId === pickedCards[0] ||
+            card.pairId === pickedCards[1]
+            ? { ...card, isOpen: false }
+            : card;
+        });
+        setOnDelay(true);
+        setTimeout(() => {
+          setGameCards(newCardsArr);
+          setOnDelay(false);
+        }, 1500);
+      }
     }
   }, [pickedCards]);
 
-  const handleClick = (pairId: number) => {
-    if (pickedCards.length === 2) {
+  const handleClick = (pairId: number, index: number) => {
+    if (pickedCards.length === 2 && !onDelay) {
       setPickedCards([pairId]);
-    }
-    if (pickedCards.length < 2) {
+
+      const newCardsArr = gameCards;
+      newCardsArr[index].isOpen = true;
+      setGameCards(newCardsArr);
+    } else if (pickedCards.length < 2) {
       setPickedCards((prevState) => [...prevState, pairId]);
+
+      const newCardsArr = gameCards;
+      newCardsArr[index].isOpen = true;
+      setGameCards(newCardsArr);
     }
   };
 
@@ -44,7 +66,7 @@ const GameSection: React.FC = () => {
         <GameCard
           key={`${card.pairId}card${index}`}
           {...card}
-          onClick={() => handleClick(card.pairId)}
+          onClick={() => handleClick(card.pairId, index)}
         />
       ))}
     </div>
