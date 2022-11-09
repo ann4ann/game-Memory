@@ -1,22 +1,49 @@
-import React from "react";
+import React, { FC, useState } from "react";
+import styles from "./App.module.scss";
 import Footer from "./components/Footer/FooterItem";
 import GameSection from "./components/GameSection/GameSection";
 import Header from "./components/Header/Header";
+import GameDifficulty from "./components/GameDifficulty/GameDifficulty";
 
-function App() {
+const App: FC = () => {
+  const [difficulty, setDifficulty] = useState<number>(0);
+  const [isGaming, setIsGaming] = useState<boolean>(false);
+
+  const handleClickLite = () => {
+    setDifficulty(1);
+  };
+  const handleClickMiddle = () => {
+    setDifficulty(2);
+  };
+  const handleClickHard = () => {
+    setDifficulty(3);
+  };
+  const handleStartGame = () => {
+    setIsGaming(true);
+  };
+  const handleClickSelectOptions = () => {
+    setIsGaming(false);
+  };
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <section className={styles.app}>
       <Header />
-      <GameSection />
+      {isGaming ? (
+        <GameSection
+          difficulty={difficulty}
+          onClickSelectOptions={handleClickSelectOptions}
+        />
+      ) : (
+        <GameDifficulty
+          difficulty={difficulty}
+          onClickLite={handleClickLite}
+          onClickMiddle={handleClickMiddle}
+          onClickHard={handleClickHard}
+          onClickStartGame={handleStartGame}
+        />
+      )}
       <Footer />
-    </div>
+    </section>
   );
-}
+};
 
 export default App;

@@ -3,6 +3,19 @@
   padding: 25px;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   justify-content: center;
   background-color: #957b8d;
+
+  > button {
+    position: absolute;
+    bottom: 5px;
+    padding: 5px 20px;
+    background-color: rgb(109, 60, 60);
+    border: none;
+    border-radius: 10px;
+    z-index: 20;
+    color: white;
+    cursor: pointer;
+  }
 }

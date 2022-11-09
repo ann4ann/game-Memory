@@ -1,20 +1,31 @@
 import React, { FC, useEffect, useState } from "react";
 import GameCard from "../GameCard/GameCard";
 import { cards, card } from "../../data/cardData";
-import { shuffle } from "../../utils/functions";
+import { getShuffledPairsArr, shuffle } from "../../utils/functions";
 import styles from "./GameSection.module.scss";
+import { GameProps } from "../../data/gameOptions";
 
-const GameSection: FC = () => {
+const GameSection: FC<GameProps> = ({ difficulty, onClickSelectOptions }) => {
   const [gameCards, setGameCards] = useState<card[]>([]);
   const [pickedCards, setPickedCards] = useState<number[]>([]);
   const [onDelay, setOnDelay] = useState<boolean>(false);
 
   useEffect(() => {
-    const cardsFirstSet = JSON.parse(JSON.stringify(cards));
-    const cardsSecondSet = JSON.parse(JSON.stringify(cards));
-    const cardsPairs = [...cardsFirstSet, ...cardsSecondSet];
-    const chuffledCardsPairs = shuffle(shuffle(cardsPairs));
-    setGameCards(chuffledCardsPairs);
+    let cardsSet = shuffle(cards);
+    switch (difficulty) {
+      case 1:
+        cardsSet = cards.slice(0, 6);
+        break;
+      case 2:
+        cardsSet = cards.slice(0, 12);
+        break;
+
+      default:
+        cardsSet = cards;
+        break;
+    }
+    const shuffledCardsPairs = getShuffledPairsArr(cardsSet);
+    setGameCards(shuffledCardsPairs);
   }, []);
 
   useEffect(() => {
@@ -61,6 +72,7 @@ const GameSection: FC = () => {
           onClick={() => handleClick(card.pairId, index)}
         />
       ))}
+      <button onClick={onClickSelectOptions}>Выбрать сложность</button>
     </div>
   );
 };

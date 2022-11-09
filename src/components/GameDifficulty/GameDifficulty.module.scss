@@ -1,0 +1,38 @@
+.gameDifficulty {
+  flex-grow: 1;
+  padding: 25px;
+  text-align: center;
+  background-color: #b8adb4;
+
+  > h4 {
+    text-transform: uppercase;
+  }
+}
+
+.difficultyBtn {
+  cursor: pointer;
+  margin: 10px;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px 2px rgb(133, 133, 133);
+  background-color: rgb(151, 181, 209);
+}
+
+.choiсeBtn {
+  cursor: pointer;
+  margin: 10px;
+  width: 100px;
+  padding: 10px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px 2px rgb(133, 133, 133);
+  background-color: rgb(56, 134, 76);
+}
+
+.difficultyImg {
+  width: 100px;
+  margin: 20px;
+}
