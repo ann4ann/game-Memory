@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/FooterItem";
 import GameSection from "./components/GameSection/GameSection";
 import Header from "./components/Header/Header";
 

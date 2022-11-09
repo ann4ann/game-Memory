@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import GameCard from "../GameCard/GameCard";
 import { cards, card } from "../../data/cardData";
 import { shuffle } from "../../utils/functions";
+import styles from "./GameSection.module.scss";
 
-const GameSection: React.FC = () => {
+const GameSection: FC = () => {
   const [gameCards, setGameCards] = useState<card[]>([]);
   const [pickedCards, setPickedCards] = useState<number[]>([]);
   const [onDelay, setOnDelay] = useState<boolean>(false);
@@ -52,16 +53,7 @@ const GameSection: React.FC = () => {
   };
 
   return (
-    <div
-      style={{
-        flexGrow: 1,
-        padding: "25px",
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        backgroundColor: "#957B8D",
-      }}
-    >
+    <div className={styles.gameSection}>
       {gameCards.map((card, index) => (
         <GameCard
           key={`${card.pairId}card${index}`}
