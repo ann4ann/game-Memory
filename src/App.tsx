@@ -22,6 +22,7 @@ const App: FC = () => {
     setIsGaming(true);
   };
   const handleClickSelectOptions = () => {
+    setDifficulty(0);
     setIsGaming(false);
   };
   return (

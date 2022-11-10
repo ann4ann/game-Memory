@@ -10,3 +10,8 @@ export function getShuffledPairsArr(arr: any[]) {
   const shuffledCardsPairs = shuffle(shuffle(cardsPairs));
   return shuffledCardsPairs;
 }
+
+export function getImgClearName(str: string): string {
+  let clearName = str.replace("./", "").replace(/\.(png|jpe?g|svg)$/, "");
+  return clearName;
+}

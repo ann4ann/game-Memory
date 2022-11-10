@@ -14,19 +14,18 @@ const GameSection: FC<GameProps> = ({ difficulty, onClickSelectOptions }) => {
     let cardsSet = shuffle(cards);
     switch (difficulty) {
       case 1:
-        cardsSet = cards.slice(0, 6);
+        cardsSet = cardsSet.slice(0, 6);
         break;
       case 2:
-        cardsSet = cards.slice(0, 12);
+        cardsSet = cardsSet.slice(0, 12);
         break;
 
       default:
-        cardsSet = cards;
         break;
     }
     const shuffledCardsPairs = getShuffledPairsArr(cardsSet);
     setGameCards(shuffledCardsPairs);
-  }, []);
+  }, [difficulty]);
 
   useEffect(() => {
     if (pickedCards.length > 1) {
