@@ -1,15 +1,34 @@
 {
   "files": {
-    "main.css": "/game-Memory/static/css/main.b7604d7b.css",
-    "main.js": "/game-Memory/static/js/main.33d998a7.js",
+    "main.css": "/game-Memory/static/css/main.43615383.css",
+    "main.js": "/game-Memory/static/js/main.bb057a6e.js",
     "static/js/787.e55455a6.chunk.js": "/game-Memory/static/js/787.e55455a6.chunk.js",
+    "static/media/diff1.png": "/game-Memory/static/media/diff1.a2a6faa061b54d00745d.png",
+    "static/media/diff3.png": "/game-Memory/static/media/diff3.f64bc7320f4de617845b.png",
+    "static/media/Lemon slice.png": "/game-Memory/static/media/Lemon slice.e0e23b9ba239c28809b2.png",
+    "static/media/diff2.png": "/game-Memory/static/media/diff2.98cf3162ef5965581e07.png",
+    "static/media/Pineapple.png": "/game-Memory/static/media/Pineapple.1b4a1fcb19f208333d2c.png",
+    "static/media/Grapes.png": "/game-Memory/static/media/Grapes.c095c5a223e16ec31df1.png",
+    "static/media/Orange.png": "/game-Memory/static/media/Orange.3b1397399d8e6302e6af.png",
+    "static/media/Avocado.png": "/game-Memory/static/media/Avocado.3eefc28aaf4838b74926.png",
+    "static/media/Pumpkin.png": "/game-Memory/static/media/Pumpkin.8018f327d904fd7f0506.png",
+    "static/media/Watermelon.png": "/game-Memory/static/media/Watermelon.669a358b50483260988a.png",
+    "static/media/Strawberry.png": "/game-Memory/static/media/Strawberry.18349b14300a62300e0b.png",
+    "static/media/Peach.png": "/game-Memory/static/media/Peach.e131552dc592064d8fe0.png",
+    "static/media/Apricot.png": "/game-Memory/static/media/Apricot.d97afcbdad4d7c0f77f8.png",
+    "static/media/Banana.png": "/game-Memory/static/media/Banana.8b8fbad594170f12d1ff.png",
+    "static/media/Tomato.png": "/game-Memory/static/media/Tomato.b5ab7542d7b1a2489223.png",
+    "static/media/Peas.png": "/game-Memory/static/media/Peas.f3136d43a1ae45644fe3.png",
+    "static/media/Apple.png": "/game-Memory/static/media/Apple.c324da097fdf510b1168.png",
+    "static/media/Kivi.png": "/game-Memory/static/media/Kivi.7901fb17411e34b93d25.png",
+    "static/media/Star-fruit.png": "/game-Memory/static/media/Star-fruit.7d10b947250907e6b944.png",
     "index.html": "/game-Memory/index.html",
-    "main.b7604d7b.css.map": "/game-Memory/static/css/main.b7604d7b.css.map",
-    "main.33d998a7.js.map": "/game-Memory/static/js/main.33d998a7.js.map",
+    "main.43615383.css.map": "/game-Memory/static/css/main.43615383.css.map",
+    "main.bb057a6e.js.map": "/game-Memory/static/js/main.bb057a6e.js.map",
     "787.e55455a6.chunk.js.map": "/game-Memory/static/js/787.e55455a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7604d7b.css",
-    "static/js/main.33d998a7.js"
+    "static/css/main.43615383.css",
+    "static/js/main.bb057a6e.js"
   ]
 }
