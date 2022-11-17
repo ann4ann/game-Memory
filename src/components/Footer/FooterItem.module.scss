@@ -1,8 +1,15 @@
+@import "src/variables";
+
 .footer {
   padding: 10px 25px;
-  background-color: #c7d0cc;
+  background-color: $accent-color;
   position: sticky;
   bottom: 0;
   text-align: right;
   z-index: 5;
+
+  > a {
+    color: $text-dark-regular;
+    text-decoration: none;
+  }
 }

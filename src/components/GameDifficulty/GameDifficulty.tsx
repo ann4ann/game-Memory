@@ -2,6 +2,11 @@ import React, { FC, useEffect, useState } from "react";
 import { GameProps } from "../../data/gameOptions";
 import styles from "./GameDifficulty.module.scss";
 
+import SelectDiff from "../../assets/img/difficulty/select.png";
+import Diff1 from "../../assets/img/difficulty/diff1.png";
+import Diff2 from "../../assets/img/difficulty/diff2.png";
+import Diff3 from "../../assets/img/difficulty/diff3.png";
+
 const GameDifficulty: FC<GameProps> = ({
   difficulty,
   onClickLite,
@@ -13,28 +18,20 @@ const GameDifficulty: FC<GameProps> = ({
   useEffect(() => {
     switch (difficulty) {
       case 1: {
-        setImgSrc(
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Pocket_cube_solved.jpg/330px-Pocket_cube_solved.jpg"
-        );
+        setImgSrc(Diff1);
         break;
       }
       case 2: {
-        setImgSrc(
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rubiks_-_Right_Double.svg/459px-Rubiks_-_Right_Double.svg.png"
-        );
+        setImgSrc(Diff2);
         break;
       }
       case 3: {
-        setImgSrc(
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Professor's_Cube_disassembly_0.jpg/220px-Professor's_Cube_disassembly_0.jpg"
-        );
+        setImgSrc(Diff3);
         break;
       }
 
       default: {
-        setImgSrc(
-          "https://pngimg.com/uploads/question_mark/question_mark_PNG138.png"
-        );
+        setImgSrc(SelectDiff);
         break;
       }
     }

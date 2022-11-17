@@ -1,38 +1,49 @@
+@import "src/variables";
+
 .gameDifficulty {
+  background-color: $base-color-dark;
   flex-grow: 1;
   padding: 25px;
   text-align: center;
-  background-color: #b8adb4;
 
   > h4 {
-    text-transform: uppercase;
+    color: $text-light-title;
+    font-weight: 600;
+    font-size: 1.3em;
+    line-height: 1.55em;
   }
 }
 
-.difficultyBtn {
+@mixin btn {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5em;
+  text-transform: uppercase;
   cursor: pointer;
   margin: 10px;
   width: 100px;
   padding: 5px;
   border: none;
-  border-radius: 5px;
-  box-shadow: 2px 2px 7px 2px rgb(133, 133, 133);
-  background-color: rgb(151, 181, 209);
+  border-radius: 3px;
+}
+
+.difficultyBtn {
+  @include btn;
+
+  background-color: $main;
+  color: $text-light-title;
+  box-shadow: 1px 1px 3px 1px $accent-color;
 }
 
 .choiсeBtn {
-  cursor: pointer;
-  margin: 10px;
-  width: 100px;
-  padding: 10px;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 2px 2px 7px 2px rgb(133, 133, 133);
-  background-color: rgb(56, 134, 76);
+  @include btn;
+
+  background-color: $secondary;
+  color: $text-dark-title;
+  box-shadow: 1px 1px 3px 1px $accent-color;
 }
 
 .difficultyImg {
-  width: 100px;
+  height: 100px;
   margin: 20px;
 }

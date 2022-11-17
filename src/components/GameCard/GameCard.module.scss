@@ -1,25 +1,31 @@
+@import "src/variables";
+
 .card {
+  background-color: rgba($color: $base-color-dark, $alpha: 0.15);
   width: 115px;
   height: 140px;
   margin: 5px;
-  border-radius: 12px;
+  border-radius: 5px;
   box-sizing: border-box;
-  background-color: #c2c2c2;
   user-select: none;
   overflow: hidden;
   position: relative;
 
   > img {
     width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
     height: auto;
   }
 
   > p {
+    color: $text-accent;
     position: absolute;
     width: 100%;
     bottom: 5px;
-    font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5em;
     text-align: center;
   }
 }

@@ -1,10 +1,17 @@
+@import "src/variables";
+
 .header {
+  background-color: $accent-color;
+  color: $text-light-secondary;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 0 25px;
-  background-color: #c7d0cc;
   position: sticky;
   top: 0;
   z-index: 5;
+
+  > h1 {
+    color: $text-light-title;
+  }
 }

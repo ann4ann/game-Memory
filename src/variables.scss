@@ -1,0 +1,35 @@
+// 5 в ряду
+$base-color-dark: #1d2d3e;
+// 1 в ряду
+$base-color-light: #f2f1f3;
+// 4 в ряду
+$accent-color: #5a749b;
+
+// 3 в ряду
+$main: #1f72d8;
+// 2 в ряду
+$secondary: #1ad0ae;
+
+// Пример на темном фоне белые карточки
+// ОСНОВНОЙ ТЕКСТ
+// font-weight: 300;
+// font-size: 14px;
+// line-height: 1.5em;
+$text-dark-regular: #0d1018;
+// ТЕКСТ ЗАГОЛОВКА
+// font-weight: 700;
+// font-size: 1.3em;
+// line-height: 1.55em;
+$text-dark-title: #1d263b;
+// ТЕКСТ СТАТУТСА   // параметры как основной
+$text-dark-secondary: #b5afb5;
+
+// Пример на темном фоне темные карточки
+// Основной текст
+$text-light-regular: #ffffffb3;
+// Текст заголовка
+$text-light-title: #ffffff;
+// Текст статутса
+$text-light-secondary: #ffffffcc;
+
+$text-accent: #2370dd;

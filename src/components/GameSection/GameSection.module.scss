@@ -1,21 +1,26 @@
+@import "src/variables";
+
 .gameSection {
+  background-color: $base-color-light;
   flex-grow: 1;
   padding: 25px;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
-  background-color: #957b8d;
 
   > button {
+    background-color: $base-color-light;
+    color: $text-dark-title;
     position: absolute;
     bottom: 5px;
-    padding: 5px 20px;
-    background-color: rgb(109, 60, 60);
-    border: none;
-    border-radius: 10px;
     z-index: 20;
-    color: white;
+    padding: 5px 20px;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
     cursor: pointer;
+    border: none;
+    border-radius: 3px;
   }
 }

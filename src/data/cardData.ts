@@ -9,7 +9,7 @@ export interface card {
 }
 
 const CardImgModel = require.context(
-  "../assets/img",
+  "../assets/img/cards",
   false,
   /\.(png|jpe?g|svg)$/
 );
