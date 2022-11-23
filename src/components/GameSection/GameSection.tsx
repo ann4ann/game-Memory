@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import GameCard from "../GameCard/GameCard";
 import { cards, card } from "../../data/cardData";
 import { getShuffledPairsArr, shuffle } from "../../utils/functions";
@@ -7,11 +7,15 @@ import { GameProps } from "../../data/gameOptions";
 
 const GameSection: FC<GameProps> = ({ difficulty, onClickSelectOptions }) => {
   const [gameCards, setGameCards] = useState<card[]>([]);
+  const [difficultyStyle, setDifficultyStyle] = useState<string>("");
   const [pickedCards, setPickedCards] = useState<number[]>([]);
   const [onDelay, setOnDelay] = useState<boolean>(false);
 
   useEffect(() => {
     let cardsSet = shuffle(cards);
+    setDifficultyStyle(
+      difficulty === 3 ? "hard" : difficulty === 2 ? "medium" : "light"
+    );
     switch (difficulty) {
       case 1:
         cardsSet = cardsSet.slice(0, 6);
@@ -63,14 +67,24 @@ const GameSection: FC<GameProps> = ({ difficulty, onClickSelectOptions }) => {
   };
 
   return (
-    <div className={styles.gameSection}>
-      {gameCards.map((card, index) => (
-        <GameCard
-          key={`${card.pairId}card${index}`}
-          {...card}
-          onClick={() => handleClick(card.pairId, index)}
-        />
-      ))}
+    <div className={styles.wrapper}>
+      <div
+        className={`${styles.gameSection} ${
+          difficulty === 3
+            ? styles.hard
+            : difficulty === 2
+            ? styles.medium
+            : styles.light
+        }`}
+      >
+        {gameCards.map((card, index) => (
+          <GameCard
+            key={`${card.pairId}card${index}`}
+            {...card}
+            onClick={() => handleClick(card.pairId, index)}
+          />
+        ))}
+      </div>
       <button onClick={onClickSelectOptions}>Выбрать сложность</button>
     </div>
   );

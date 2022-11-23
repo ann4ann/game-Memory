@@ -2,17 +2,16 @@
 
 .card {
   background-color: rgba($color: $base-color-dark, $alpha: 0.15);
-  width: 115px;
-  height: 140px;
-  margin: 5px;
   border-radius: 5px;
+  text-align: center;
   box-sizing: border-box;
   user-select: none;
   overflow: hidden;
   position: relative;
 
   > img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
     box-sizing: border-box;
     padding: 5px;
     height: auto;

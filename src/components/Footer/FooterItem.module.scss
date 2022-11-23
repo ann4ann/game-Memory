@@ -3,6 +3,8 @@
 .footer {
   padding: 10px 25px;
   background-color: $accent-color;
+  height: 40px;
+  box-sizing: border-box;
   position: sticky;
   bottom: 0;
   text-align: right;
@@ -10,6 +12,7 @@
 
   > a {
     color: $text-dark-regular;
+    cursor: pointer;
     text-decoration: none;
   }
 }

@@ -1,19 +1,18 @@
 @import "src/variables";
 
-.gameSection {
+.wrapper {
   background-color: $base-color-light;
-  flex-grow: 1;
-  padding: 25px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: center;
+  height: calc(100vh - 120px);
+  position: relative;
 
   > button {
-    background-color: $base-color-light;
-    color: $text-dark-title;
     position: absolute;
-    bottom: 5px;
+    background-color: $base-color-light;
+    min-width: 200px;
+    color: $text-dark-title;
+    bottom: -33px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 20;
     padding: 5px 20px;
     font-weight: 400;
@@ -22,5 +21,138 @@
     cursor: pointer;
     border: none;
     border-radius: 3px;
+  }
+}
+
+.gameSection {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  box-sizing: border-box;
+  height: 100%;
+
+  &.hard {
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(9, min-content);
+      grid-gap: 10px;
+      padding: 20px 40px;
+
+      & > div {
+        width: 90px;
+        height: 105px;
+      }
+    }
+
+    @media screen and (orientation: landscape) and (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 8px;
+      padding: 15px 25px;
+    }
+    @media screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-gap: 8px;
+      padding: 15px 25px;
+    }
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      grid-gap: 6px;
+      padding: 15px 25px;
+    }
+  }
+  &.medium {
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(6, min-content);
+      grid-gap: 10px;
+      padding: 20px 40px;
+
+      & > div {
+        width: 90px;
+        height: 105px;
+      }
+    }
+
+    @media screen and (orientation: landscape) and (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 8px;
+      padding: 15px 150px;
+    }
+    @media screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-gap: 8px;
+      padding: 15px 150px;
+    }
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-gap: 6px;
+      padding: 15px 10px;
+    }
+  }
+  &.light {
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(4, min-content);
+      grid-gap: 10px;
+      padding: 75px 10px;
+
+      & > div {
+        width: 90px;
+        height: 105px;
+      }
+    }
+
+    @media screen and (orientation: landscape) and (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(4, min-content);
+      grid-gap: 10px;
+      padding: 45px 10px;
+
+      & > div {
+        width: 90px;
+        height: 105px;
+      }
+    }
+    @media screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(4, min-content);
+      grid-gap: 10px;
+      padding: 75px 10px;
+
+      & > div {
+        width: 90px;
+        height: 105px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 6px;
+      padding: 75px 10px;
+
+      & > div > p {
+        display: none;
+      }
+    }
+  }
+}
+
+.hard {
+  background-color: rgb(238, 213, 221);
+}
+.medium {
+  background-color: rgb(235, 235, 205);
+}
+.light {
+  background-color: rgb(210, 235, 210);
+
+  @media screen and (max-width: 767px) {
+    & > div > p {
+      display: none;
+    }
   }
 }
