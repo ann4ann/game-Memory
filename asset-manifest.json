@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/game-Memory/static/css/main.5a6f6458.css",
+    "main.css": "/game-Memory/static/css/main.dcdaaf93.css",
     "main.js": "/game-Memory/static/js/main.7f3a4830.js",
     "static/js/787.e55455a6.chunk.js": "/game-Memory/static/js/787.e55455a6.chunk.js",
     "static/media/diff1.png": "/game-Memory/static/media/diff1.a2a6faa061b54d00745d.png",
@@ -23,12 +23,12 @@
     "static/media/Kivi.png": "/game-Memory/static/media/Kivi.7901fb17411e34b93d25.png",
     "static/media/Star-fruit.png": "/game-Memory/static/media/Star-fruit.7d10b947250907e6b944.png",
     "index.html": "/game-Memory/index.html",
-    "main.5a6f6458.css.map": "/game-Memory/static/css/main.5a6f6458.css.map",
+    "main.dcdaaf93.css.map": "/game-Memory/static/css/main.dcdaaf93.css.map",
     "main.7f3a4830.js.map": "/game-Memory/static/js/main.7f3a4830.js.map",
     "787.e55455a6.chunk.js.map": "/game-Memory/static/js/787.e55455a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a6f6458.css",
+    "static/css/main.dcdaaf93.css",
     "static/js/main.7f3a4830.js"
   ]
 }
